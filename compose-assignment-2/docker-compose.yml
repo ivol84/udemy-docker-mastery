@@ -7,10 +7,10 @@ services:
     ports:
       - "8090:80"
     volumes:
-      - ./drupal:/var/www/html/modules \
-      - ./drupal:/var/www/html/profiles \
-      - ./drupal:/var/www/html/sites \
-      - ./drupal:/var/www/html/themes
+      - drupal-modules:/var/www/html/modules
+      - drupal-profiles:/var/www/html/profiles       
+      - drupal-sites:/var/www/html/sites      
+      - drupal-themes:/var/www/html/themes
   db:
     image: postgres:9.6
     volumes: 
@@ -19,3 +19,7 @@ services:
       POSTGRES_PASSWORD: 12345
 volumes:
   drupal-data:
+  drupal-modules:
+  drupal-profiles:
+  drupal-sites:
+  drupal-themes:
