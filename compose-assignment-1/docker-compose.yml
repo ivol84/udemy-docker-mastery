@@ -1,0 +1,15 @@
+version: "2"
+services:
+  drupal:
+    image: drupal:8.2
+    ports:
+      - "8090:80"
+    volumes:
+      - ./drupal:/var/www/html/modules \
+      - ./drupal:/var/www/html/profiles \
+      - ./drupal:/var/www/html/sites \
+      - ./drupal:/var/www/html/themes
+  db:
+    image: postgres:9.6
+    environment:
+      POSTGRES_PASSWORD: 12345
